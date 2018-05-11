@@ -1,1 +1,25 @@
+<strong>{{model.username}}</strong> <br>
+<img src={{model.profilePicture}} alt=""><br>
+<strong>First name:</strong>{{model.firstName}} <br>
+<strong>Last name:</strong>{{model.lastName}}<br>
+<strong>Posts:</strong>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Published date</th>
+    <th>Content</th>
+  </tr>
+  {{#each model.posts as |post|}}
+    <tr>
+      <th><button {{action 'delate' post}}>Delate post</button></th>
+      <th>{{post.title}}</th>
+      <th>{{post.publishedAt}}</th>
+      <th>{{post.content}}</th>
+    </tr>
+  {{/each}}
+</table>
+
+
 {{outlet}}
