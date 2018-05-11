@@ -2,10 +2,14 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions:{
-    delate(post){
-      const respuesta = confirm('desea borrar el post');
+    delete(post){
+      const respuesta = confirm('desea eliminar el post');
       if(respuesta){
-        post.destroyRecord();
+
+        post.deleteRecord();
+        //post.destroyRecord();
+        post.get('IS DELETE');
+        post.save();
       }
     }
   }

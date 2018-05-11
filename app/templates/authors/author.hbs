@@ -13,7 +13,7 @@
   </tr>
   {{#each model.posts as |post|}}
     <tr>
-      <th><button {{action 'delate' post}}>Delate post</button></th>
+      <th><button {{action 'delete' post}}>Delete post</button></th>
       <th>{{post.title}}</th>
       <th>{{post.publishedAt}}</th>
       <th>{{post.content}}</th>
